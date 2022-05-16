@@ -71,8 +71,8 @@ const cocktailReducer = (
       return { ...state, loading: true };
     case CocktailFetchState.loaded:
       return {
+        ...state,
         loading: false,
-        error: false,
         drinks: action.payload as Cocktail[],
       };
     case CocktailFetchState.failed:
