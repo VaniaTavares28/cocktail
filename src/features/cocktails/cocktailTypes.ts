@@ -1,6 +1,4 @@
-import { AnyAction } from "redux";
-import { ThunkAction } from "redux-thunk";
-import { RootState } from "../../app/store";
+import { ApiResponseType } from "../generalTypes";
 
 export enum CocktailFetchState {
   loading = "cocktails/loading",
@@ -24,15 +22,8 @@ export type CocktailDispatchTypes =
   | { type: string }
   | { type: string; payload: Cocktail[] };
 
-export type ResponseType = {
-  [key: string]: string | number | { drinks: Cocktail[] };
+export type CocktailResponseType = ApiResponseType & {
+  [key: string]: { drinks: Cocktail[] };
 };
 
 export type ActionType = { type: string; payload?: string | Cocktail[] };
-
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  AnyAction
->;
