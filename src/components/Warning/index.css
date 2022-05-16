@@ -1,0 +1,19 @@
+.warning-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.warning-container h3 {
+  padding-bottom: 20px;
+}
+
+.warning-image-container {
+  width: 100%;
+  height: 40vh;
+}
+
+.warning-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
