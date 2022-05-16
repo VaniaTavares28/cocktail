@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ThunkDispatch } from "redux-thunk";
-import { RootState } from "../../app/store";
+import { RootState, RootStore } from "../../app/store";
+import { randomEight } from "../../helpers/functions";
 
 import {
   Cocktail,
@@ -50,12 +51,16 @@ export const fetchAlcoholicsDrink = async (
     const resp: CocktailResponseType = await axios.get(url);
     if (resp?.status === 200 && resp?.data) {
       const { drinks } = resp.data as { drinks: Cocktail[] };
-      dispatch(loadCocktails(drinks));
+      const randomEightDrinks = randomEight(drinks);
+      dispatch(loadCocktails(randomEightDrinks));
     }
   } catch (error: unknown | { message: string }) {
     dispatch(failedCocktails((error as { message: string }).message));
   }
 };
+
+export const cocktailSelector = (state: RootStore): Cocktails =>
+  state.cocktails;
 
 const cocktailReducer = (
   state: Cocktails = initialCocktails,
@@ -74,7 +79,7 @@ const cocktailReducer = (
       return {
         ...state,
         loading: false,
-        error: { hasHappened: true, message: action.payload },
+        error: { hasHappened: true, message: action.payload as string },
       };
     default:
       return state;
