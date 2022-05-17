@@ -1,5 +1,3 @@
-import { ApiResponseType } from "../generalTypes";
-
 export enum CocktailFetchState {
   loading = "cocktails/loading",
   loaded = "cocktails/loaded",
@@ -17,6 +15,10 @@ export interface Cocktails {
   error: { hasHappened: boolean; message: string };
   loading: boolean;
 }
+
+export type ApiResponseType = {
+  [key: string]: string | number | boolean;
+};
 
 export type CocktailDispatchTypes =
   | { type: string }
