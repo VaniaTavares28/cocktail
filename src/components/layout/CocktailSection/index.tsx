@@ -1,7 +1,7 @@
 import { Warning, CocktailCard } from "../..";
 import { randomEight } from "../../../helpers/functions";
 import { Cocktails } from "../../../interfaces";
-import "./index.css";
+import "./style.css";
 
 const CocktailSection = ({
   title,

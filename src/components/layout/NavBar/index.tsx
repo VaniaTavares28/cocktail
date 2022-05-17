@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import CSS from "csstype";
 import images from "../../../assets/images";
 import { navLinks } from "../../../helpers/constants";
-import "./index.css";
+import "./style.css";
 
 const activeStyle: CSS.Properties = {
   backgroundColor: "#c52d2f",
@@ -34,7 +34,12 @@ const Navigation = () => {
             <li key={link.id} className={link.group ? "social-media-li" : ""}>
               {link.group ? (
                 link.group.map((link) => (
-                  <NavLink key={link.subId} to={link.path}>
+                  <a
+                    key={link.subId}
+                    target="_blank"
+                    href={link.path}
+                    rel="noreferrer"
+                  >
                     {link.image ? (
                       <img
                         className="img-links"
@@ -44,7 +49,7 @@ const Navigation = () => {
                     ) : (
                       link.title
                     )}
-                  </NavLink>
+                  </a>
                 ))
               ) : (
                 <NavLink

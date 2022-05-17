@@ -1,5 +1,5 @@
 import { Cocktail } from "../../interfaces";
-import "./index.css";
+import "./style.css";
 
 const CocktailCard = ({ drink, size }: { size: number; drink: Cocktail }) => {
   return (
