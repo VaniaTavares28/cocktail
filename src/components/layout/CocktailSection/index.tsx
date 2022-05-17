@@ -1,4 +1,5 @@
 import { Warning, CocktailCard } from "../..";
+import { randomEight } from "../../../helpers/functions";
 import { Cocktails } from "../../../interfaces";
 import "./index.css";
 
@@ -26,7 +27,7 @@ const CocktailSection = ({
     <section className="cocktail-section">
       <h3>{title}</h3>
       <div className={custom ? "cocktail-browse-grid" : "cocktail-grid"}>
-        {cocktailsState.drinks.map((drink) => (
+        {randomEight(cocktailsState.drinks).map((drink) => (
           <CocktailCard key={drink.idDrink} size={95} drink={drink} />
         ))}
       </div>

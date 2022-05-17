@@ -17,19 +17,6 @@ code {
   color: white;
 }
 
-a {
-  font: 400 normal 14px'Open Sans', sans-serif;
-  color: #a78d9b;
-  text-align: center;
-  text-decoration: none;
-  transition: color 300ms;
-}
-
-a:hover, a:focus {
-  outline: none;
-  color: #ffa700;
-}
-
 h1{
   font: 600 normal 36px/40px 'Open Sans', sans-serif
 }

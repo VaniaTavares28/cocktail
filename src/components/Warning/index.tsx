@@ -1,4 +1,5 @@
 import images from "../../assets/images";
+import "./index.css";
 
 const Warning = ({ warning }: { warning: string }) => {
   return (
@@ -6,7 +7,7 @@ const Warning = ({ warning }: { warning: string }) => {
       <article className="warning-image-container">
         <img src={images.glasses} alt="glasses" />
       </article>
-      <h3>{warning}</h3>
+      <h2>{warning}</h2>
     </div>
   );
 };
