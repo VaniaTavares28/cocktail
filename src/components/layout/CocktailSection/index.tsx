@@ -1,10 +1,24 @@
-import { CocktailCard, Warning } from "../..";
-import { Cocktails } from "../../../views/Home/types";
+import { Warning } from "../..";
+import { Cocktail, Cocktails } from "../../../views/Home/types";
+import "./index.css";
+
+const CocktailCard = ({ drink, size }: { size: number; drink: Cocktail }) => {
+  return (
+    <a href=".">
+      <div className={`cocktail-grid-card-${size}`}>
+        <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+      </div>
+      {drink.strDrink}
+    </a>
+  );
+};
 
 const CocktailSection = ({
   title,
   cocktailsState,
+  custom,
 }: {
+  custom?: boolean;
   title: string;
   cocktailsState: Cocktails;
 }) => {
@@ -20,9 +34,9 @@ const CocktailSection = ({
     );
 
   return (
-    <section>
+    <section className="cocktail-section">
       <h3>{title}</h3>
-      <div className="cocktail-grid">
+      <div className={custom ? "cocktail-browse-grid" : "cocktail-grid"}>
         {cocktailsState.drinks.map((drink) => (
           <CocktailCard key={drink.idDrink} size={95} drink={drink} />
         ))}

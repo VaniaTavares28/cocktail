@@ -1,5 +1,5 @@
 .cocktail-section {
-  max-width: 700px;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -17,7 +17,19 @@
   grid-template-columns: repeat(auto-fill, 200px);
 }
 
-@media screen and (min-width: 780px) {
+.cocktail-grid-card-95 img {
+  width: 95%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cocktail-grid-card-100 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 800px) {
   .cocktail-grid {
     width: max-content;
     grid-template-columns: repeat(4, 158px);
@@ -33,7 +45,26 @@
 }
 
 @media screen and (min-width: 990px) {
+  .cocktail-section {
+  max-width: 1140px;
+  }
+  .cocktail-browse-grid {
+  max-width: 940px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .cocktail-grid {
+    column-gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .cocktail-grid {
+    column-gap: 43px;
+  }
   .cocktail-browse-grid {
     max-width: 1140px;
+    column-gap: 92px;
   }
 }

@@ -1,4 +1,3 @@
-export { default as CocktailCard } from "./CocktailCard";
 export { default as Warning } from "./Warning";
 
 // layout

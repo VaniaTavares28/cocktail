@@ -20,6 +20,7 @@ code {
 a {
   font: 400 normal 14px'Open Sans', sans-serif;
   color: #a78d9b;
+  text-align: center;
   text-decoration: none;
   transition: color 300ms;
 }
@@ -32,6 +33,7 @@ a:hover, a:focus {
 h1, h2, h3 {
   padding-top: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 h3 {
