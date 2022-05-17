@@ -1,5 +1,5 @@
 import images from "../../assets/images";
-import "./index.css";
+import "./style.css";
 
 const Warning = ({ warning }: { warning: string }) => {
   return (
