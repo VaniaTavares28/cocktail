@@ -15,7 +15,7 @@ export const navLinks: Nav[] = [
     id: "nav003",
     path: ".",
     group: [
-      { subId: "nav00301", title: "Forum", path: "/" },
+      { subId: "nav00301", title: "Forum", path: "." },
       {
         subId: "nav00302",
         image: images.facebook,
