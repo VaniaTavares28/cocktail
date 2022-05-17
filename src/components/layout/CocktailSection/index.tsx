@@ -1,17 +1,6 @@
-import { Warning } from "../..";
-import { Cocktail, Cocktails } from "../../../views/Home/types";
+import { Warning, CocktailCard } from "../..";
+import { Cocktails } from "../../../interfaces";
 import "./index.css";
-
-const CocktailCard = ({ drink, size }: { size: number; drink: Cocktail }) => {
-  return (
-    <a href=".">
-      <div className={`cocktail-grid-card-${size}`}>
-        <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-      </div>
-      {drink.strDrink}
-    </a>
-  );
-};
 
 const CocktailSection = ({
   title,

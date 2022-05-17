@@ -1,4 +1,5 @@
-import { Cocktail, ActionType, Cocktails, CocktailFetchState } from "./types";
+import { Cocktail, ActionType, Cocktails } from "../../interfaces";
+import { CocktailFetchState } from "./actions";
 
 const initialCocktails: Cocktails = {
   loading: false,

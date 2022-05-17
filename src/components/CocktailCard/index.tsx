@@ -1,4 +1,4 @@
-import { Cocktail } from "../../views/Home/types";
+import { Cocktail } from "../../interfaces";
 import "./index.css";
 
 const CocktailCard = ({ drink, size }: { size: number; drink: Cocktail }) => {

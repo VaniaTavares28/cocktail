@@ -3,14 +3,18 @@
 import axios from "axios";
 import { ThunkDispatch } from "redux-thunk";
 import { RootState } from "../../store";
+import { Cocktail, ActionType, ApiResponseType } from "../../interfaces";
 import { randomEight } from "../../helpers/functions";
 
-import {
-  Cocktail,
-  CocktailResponseType,
-  ActionType,
-  CocktailFetchState,
-} from "./types";
+export enum CocktailFetchState {
+  loading = "cocktails/loading",
+  loaded = "cocktails/loaded",
+  failed = "cocktails/error",
+}
+
+type CocktailResponseType = ApiResponseType & {
+  [key: string]: { drinks: Cocktail[] };
+};
 
 const loadingCocktails = (): {
   type: string;
@@ -43,7 +47,7 @@ export const fetchAlcoholicsDrink = async (
     dispatch(loadingCocktails());
     const url: string =
       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic";
-    const resp: CocktailResponseType = await axios.get(url);
+    const resp: CocktailResponseType = await axios.get(url + "a");
     if (resp?.status === 200 && resp?.data) {
       const { drinks } = resp.data as { drinks: Cocktail[] };
       const randomEightDrinks = randomEight(drinks);

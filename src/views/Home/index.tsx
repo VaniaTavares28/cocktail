@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAlcoholicsDrink } from "./actions";
 import { AppDispatch, RootState } from "../../store";
-import { CocktailSection } from "../../components";
+import { CocktailSection, Navigation } from "../../components";
 
 const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -13,6 +13,7 @@ const Home = () => {
 
   return (
     <>
+      <Navigation />
       <CocktailSection title="Popular Drinks" cocktailsState={cocktailsState} />
     </>
   );
