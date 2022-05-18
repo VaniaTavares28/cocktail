@@ -1,0 +1,23 @@
+.alphabet-section {
+  width: 100%;
+  padding: 0 15px 50px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 800px) {
+  .alphabet-section  {
+    width: 720px
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .alphabet-section  {
+    width: 940px
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .alphabet-section  {
+    width: 1140px
+  }
+}
