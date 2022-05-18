@@ -15,6 +15,8 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
+  column-gap: 10%;
+  justify-content: center;
 }
 
 .cocktail-grid-card-95 img {
@@ -37,9 +39,12 @@
     column-gap: 37px;
     row-gap: 23px;
   }
+}
 
+@media screen and (min-width: 840px) {
   .cocktail-browse-grid {
     width: max-content;
+    grid-template-columns: repeat(4, 200px);
     column-gap: 0;
   }
 }
@@ -49,7 +54,8 @@
   max-width: 1140px;
   }
   .cocktail-browse-grid {
-  max-width: 940px;
+  min-width: 940px;
+  column-gap: 42px;
   }
 }
 
@@ -59,7 +65,7 @@
   }
 }
 
-@media screen and (min-width: 1050px) {
+@media screen and (min-width: 1200px) {
   .cocktail-grid {
     column-gap: 43px;
   }
