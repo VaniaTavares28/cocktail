@@ -23,3 +23,9 @@ export interface ActionType {
   type: string;
   payload?: string | Cocktail[];
 }
+
+export enum TitleSize {
+  sm = "small",
+  md = "medium",
+  lg = "large",
+}

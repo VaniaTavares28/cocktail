@@ -13,7 +13,7 @@ const cocktailReducer = (
 ) => {
   switch (action.type) {
     case CocktailFetchState.loading:
-      return { ...state, loading: true };
+      return { ...state, loading: true, drinks: [] };
     case CocktailFetchState.loaded:
       return {
         ...state,

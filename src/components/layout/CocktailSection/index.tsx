@@ -1,5 +1,5 @@
 import { Warning, CocktailCard } from "../..";
-import { Cocktails, Search } from "../../../interfaces";
+import { Cocktails, TitleSize } from "../../../interfaces";
 import "./style.css";
 
 const CocktailSection = ({
@@ -9,8 +9,8 @@ const CocktailSection = ({
   size,
 }: {
   custom?: boolean;
-  title: string;
-  cocktails: Cocktails | Search;
+  title: { size: TitleSize; content: string };
+  cocktails: Cocktails;
   size: number;
 }) => {
   if (cocktails.loading || cocktails.error.hasHappened)
@@ -24,7 +24,13 @@ const CocktailSection = ({
 
   return (
     <section className="cocktail-section">
-      <h3>{title}</h3>
+      {TitleSize.lg ? (
+        <h1 style={{ marginBottom: "98px" }}>{title.content}</h1>
+      ) : TitleSize.sm ? (
+        <h3>{title.content}</h3>
+      ) : (
+        <h2>{title.content}</h2>
+      )}
       <div className={custom ? "cocktail-browse-grid" : "cocktail-grid"}>
         {cocktails.drinks.map((drink) => (
           <CocktailCard key={drink.idDrink} size={size} drink={drink} />

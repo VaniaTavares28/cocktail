@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAlcoholicsDrink } from "./actions";
 import { AppDispatch, RootState } from "../../store";
 import { CocktailSection } from "../../components";
+import { TitleSize } from "../../interfaces";
 import images from "../../assets/images";
 import "./style.css";
 
@@ -10,7 +11,7 @@ const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
   const cocktailsState = useSelector((state: RootState) => state.cocktails);
   useEffect(() => {
-    fetchAlcoholicsDrink(dispatch);
+    fetchAlcoholicsDrink(dispatch, {});
   }, [dispatch]);
 
   return (
@@ -45,7 +46,7 @@ const Home = () => {
         </div>
       </section>
       <CocktailSection
-        title="Popular Drinks"
+        title={{ size: TitleSize.sm, content: "Popular Drinks" }}
         cocktails={cocktailsState}
         size={95}
       />

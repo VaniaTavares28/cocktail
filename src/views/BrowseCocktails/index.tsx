@@ -1,39 +1,41 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { searchDrinksByInput } from "./actions";
+import { fetchAlcoholicsDrink } from "../Home/actions";
 import { AppDispatch, RootState } from "../../store";
+import { TitleSize } from "../../interfaces";
 import { CocktailSection } from "../../components";
-// import "./style.css";
 
 const BrowseCocktails = () => {
   const params = useParams();
   const { drinkTerm, drinkLetter } = params;
 
   const dispatch = useDispatch<AppDispatch>();
-  const searchCocktails = useSelector((state: RootState) => state.search);
+  const searchCocktails = useSelector((state: RootState) => state.cocktails);
   useEffect(() => {
     if (drinkTerm) {
-      searchDrinksByInput({ searchTerm: drinkTerm }, dispatch);
+      fetchAlcoholicsDrink(dispatch, { searchTerm: drinkTerm });
     } else if (drinkLetter) {
-      searchDrinksByInput({ searchLetter: drinkLetter }, dispatch);
+      fetchAlcoholicsDrink(dispatch, { searchLetter: drinkLetter });
     }
   }, [dispatch, drinkLetter, drinkTerm]);
 
   return (
-    <div>
-      <h1>Browse Cocktails</h1>
+    <>
       {!drinkLetter && !drinkTerm ? (
-        <p>No drinks found</p>
+        <div>
+          <h1 style={{ marginBottom: "98px" }}>Browse Cocktails</h1>
+          <p>No drinks found</p>
+        </div>
       ) : (
         <CocktailSection
           custom
-          title=""
+          title={{ size: TitleSize.lg, content: "Browse Cocktails" }}
           cocktails={searchCocktails}
           size={100}
         />
       )}
-    </div>
+    </>
   );
 };
 
