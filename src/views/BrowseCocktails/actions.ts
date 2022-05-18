@@ -25,19 +25,17 @@ const failedSearch = (payload: string): ActionType => {
   return { type: SearchFetchState.failed, payload };
 };
 
-type Input = { searchTerm?: string; searchLetter?: string };
-
 export const searchDrinksByInput = async (
-  arg: Input,
+  { searchTerm, searchLetter }: { searchTerm?: string; searchLetter?: string },
   dispatch: ThunkDispatch<RootState, {}, ActionType>
 ) => {
   try {
     dispatch(loadingSearch());
     let url: string = "a";
-    if (arg.searchTerm) {
-      url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${arg.searchTerm}`;
-    } else if (arg.searchLetter) {
-      url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${arg.searchLetter}`;
+    if (searchTerm) {
+      url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`;
+    } else if (searchLetter) {
+      url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${searchLetter}`;
     }
     const resp: SearchResponseType = await axios.get(url);
     if (resp?.status === 200 && resp?.data) {
