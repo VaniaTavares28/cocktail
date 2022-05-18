@@ -4,6 +4,7 @@ import axios from "axios";
 import { ThunkDispatch } from "redux-thunk";
 import { RootState } from "../../store";
 import { Cocktail, ActionType, ApiResponseType } from "../../interfaces";
+import { randomEight } from "../../helpers/functions";
 
 export enum CocktailFetchState {
   loading = "cocktails/loading",
@@ -15,27 +16,15 @@ type CocktailResponseType = ApiResponseType & {
   [key: string]: { drinks: Cocktail[] };
 };
 
-const loadingCocktails = (): {
-  type: string;
-} => {
+const loadingCocktails = (): ActionType => {
   return { type: CocktailFetchState.loading };
 };
 
-const failedCocktails = (
-  payload: string
-): {
-  type: string;
-  payload: string;
-} => {
+const failedCocktails = (payload: string): ActionType => {
   return { type: CocktailFetchState.failed, payload };
 };
 
-const loadCocktails = (
-  payload: Cocktail[]
-): {
-  type: string;
-  payload: Cocktail[];
-} => {
+const loadCocktails = (payload: Cocktail[]): ActionType => {
   return { type: CocktailFetchState.loaded, payload };
 };
 
@@ -49,7 +38,8 @@ export const fetchAlcoholicsDrink = async (
     const resp: CocktailResponseType = await axios.get(url);
     if (resp?.status === 200 && resp?.data) {
       const { drinks } = resp.data as { drinks: Cocktail[] };
-      dispatch(loadCocktails(drinks));
+      const eightDrinks = randomEight(drinks);
+      dispatch(loadCocktails(eightDrinks));
     }
   } catch (error: unknown | { message: string }) {
     dispatch(failedCocktails((error as { message: string }).message));

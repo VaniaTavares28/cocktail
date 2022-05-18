@@ -1,24 +1,21 @@
 import { Warning, CocktailCard } from "../..";
-import { randomEight } from "../../../helpers/functions";
-import { Cocktails } from "../../../interfaces";
+import { Cocktails, Search } from "../../../interfaces";
 import "./style.css";
 
 const CocktailSection = ({
   title,
-  cocktailsState,
+  cocktails,
   custom,
 }: {
   custom?: boolean;
   title: string;
-  cocktailsState: Cocktails;
+  cocktails: Cocktails | Search;
 }) => {
-  if (cocktailsState.loading || cocktailsState.error.hasHappened)
+  if (cocktails.loading || cocktails.error.hasHappened)
     return (
       <section className="cocktail-section">
         <Warning
-          warning={
-            cocktailsState.loading ? "Loading..." : "There was an error..."
-          }
+          warning={cocktails.loading ? "Loading..." : "There was an error..."}
         />
       </section>
     );
@@ -27,7 +24,7 @@ const CocktailSection = ({
     <section className="cocktail-section">
       <h3>{title}</h3>
       <div className={custom ? "cocktail-browse-grid" : "cocktail-grid"}>
-        {randomEight(cocktailsState.drinks).map((drink) => (
+        {cocktails.drinks.map((drink) => (
           <CocktailCard key={drink.idDrink} size={95} drink={drink} />
         ))}
       </div>
