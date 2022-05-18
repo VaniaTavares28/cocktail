@@ -4,6 +4,7 @@ import CSS from "csstype";
 import images from "../../../assets/images";
 import { navLinks } from "../../../helpers/constants";
 import "./style.css";
+import SearchField from "../../SearchField";
 
 const activeStyle: CSS.Properties = {
   backgroundColor: "#c52d2f",
@@ -62,7 +63,7 @@ const Navigation = () => {
             </li>
           ))}
           <li>
-            <input placeholder="Search" />
+            <SearchField placeholder="Search" />
           </li>
         </ul>
         <ul className={showMenu ? "dropdown-menu" : "dropdown-menu-hidden"}>

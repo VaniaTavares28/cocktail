@@ -103,7 +103,7 @@ li a:hover, li a:focus {
 li input {
   width: 120px;
   height: 36px;
-  padding: 5px 0;
+  padding: 5px 2px;
   border-radius: 4px;
 }
 
