@@ -24,7 +24,7 @@ const BrowseCocktails = () => {
     <>
       {!drinkLetter && !drinkTerm ? (
         <div>
-          <h1 style={{ marginBottom: "98px" }}>Browse Cocktails</h1>
+          <h1 style={{ marginBottom: "75px" }}>Browse Cocktails</h1>
           <p>No drinks found</p>
         </div>
       ) : (

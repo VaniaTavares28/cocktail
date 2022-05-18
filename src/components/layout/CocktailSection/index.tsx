@@ -25,7 +25,7 @@ const CocktailSection = ({
   return (
     <section className="cocktail-section">
       {TitleSize.lg ? (
-        <h1 style={{ marginBottom: "98px" }}>{title.content}</h1>
+        <h1 style={{ marginBottom: "75px" }}>{title.content}</h1>
       ) : TitleSize.sm ? (
         <h3>{title.content}</h3>
       ) : (
