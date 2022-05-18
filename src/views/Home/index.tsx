@@ -44,7 +44,11 @@ const Home = () => {
           <img src={images.cocktailRight} alt="cocktail_right" />
         </div>
       </section>
-      <CocktailSection title="Popular Drinks" cocktails={cocktailsState} />
+      <CocktailSection
+        title="Popular Drinks"
+        cocktails={cocktailsState}
+        size={95}
+      />
     </>
   );
 };

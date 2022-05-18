@@ -9,6 +9,7 @@ import { CocktailSection } from "../../components";
 const BrowseCocktails = () => {
   const params = useParams();
   const { drinkTerm, drinkLetter } = params;
+
   const dispatch = useDispatch<AppDispatch>();
   const searchCocktails = useSelector((state: RootState) => state.search);
   useEffect(() => {
@@ -25,7 +26,12 @@ const BrowseCocktails = () => {
       {!drinkLetter && !drinkTerm ? (
         <p>No drinks found</p>
       ) : (
-        <CocktailSection custom title="" cocktails={searchCocktails} />
+        <CocktailSection
+          custom
+          title=""
+          cocktails={searchCocktails}
+          size={100}
+        />
       )}
     </div>
   );
