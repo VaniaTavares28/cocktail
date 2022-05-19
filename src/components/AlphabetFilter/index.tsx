@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { alphabetGenerator } from "../../helpers/functions";
-import "./style.css";
 
 const AlphabeticalFilter = ({ filterTitle }: { filterTitle: string }) => {
   const alphabet = useMemo<string[]>(() => {
@@ -9,7 +8,10 @@ const AlphabeticalFilter = ({ filterTitle }: { filterTitle: string }) => {
   }, []);
 
   return (
-    <section className="alphabet-section">
+    <section
+      className="outer-wrapper"
+      style={{ paddingBlockEnd: "50px", borderBlockStart: "1.5px solid white" }}
+    >
       <h3>Browse {filterTitle}</h3>
       <h2>
         {alphabet.map((letter, index) => (

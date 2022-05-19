@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="landing-section">
+      <section className="outer-wrapper" style={{ display: "flex" }}>
         <div className="landing-lateral-image">
           <img src={images.cocktailLeft} alt="cocktail_left" />
         </div>
