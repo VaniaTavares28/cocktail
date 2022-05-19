@@ -1,5 +1,5 @@
 import { Warning, CocktailCard } from "../..";
-import { Cocktails, TitleSize } from "../../../interfaces";
+import { Cocktail, Cocktails, TitleSize } from "../../../interfaces";
 import "./style.css";
 
 const CocktailSection = ({
@@ -7,8 +7,10 @@ const CocktailSection = ({
   cocktails,
   custom,
   size,
+  search,
 }: {
   custom?: boolean;
+  search: boolean;
   title: { size: TitleSize; content: string };
   cocktails: Cocktails;
   size: number;
@@ -32,9 +34,11 @@ const CocktailSection = ({
         <h2>{title.content}</h2>
       )}
       <div className={custom ? "cocktail-browse-grid" : "cocktail-grid"}>
-        {cocktails.drinks.map((drink) => (
-          <CocktailCard key={drink.idDrink} size={size} drink={drink} />
-        ))}
+        {(search ? (cocktails.search as Cocktail[]) : cocktails.drinks).map(
+          (drink) => (
+            <CocktailCard key={drink.idDrink} size={size} drink={drink} />
+          )
+        )}
       </div>
     </section>
   );
