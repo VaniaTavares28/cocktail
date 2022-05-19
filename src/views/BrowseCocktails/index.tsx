@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAlcoholicsDrink } from "../Home/actions";
 import { AppDispatch, RootState } from "../../store";
 import { TitleSize } from "../../interfaces";
-import { CocktailSection } from "../../components";
+import { AlphabeticFilter, CocktailSection } from "../../components";
 
 const BrowseCocktails = () => {
   const params = useParams();
@@ -22,10 +22,10 @@ const BrowseCocktails = () => {
 
   return (
     <>
-      {!drinkLetter && !drinkTerm ? (
+      {(!drinkLetter && !drinkTerm) || !searchCocktails.drinks.length ? (
         <div>
           <h1 style={{ marginBottom: "75px" }}>Browse Cocktails</h1>
-          <p>No drinks found</p>
+          <p style={{ paddingBlockEnd: "30vh" }}>No drinks found</p>
         </div>
       ) : (
         <CocktailSection
@@ -36,6 +36,7 @@ const BrowseCocktails = () => {
           size={100}
         />
       )}
+      <AlphabeticFilter filterTitle="Drinks" />
     </>
   );
 };

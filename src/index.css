@@ -3,6 +3,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #230312;
 }
 
 code {
@@ -15,8 +16,4 @@ code {
   padding: 0;
   box-sizing: border-box;
   color: white;
-}
-
-#root {
-  background-color: #230312;
 }

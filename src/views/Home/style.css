@@ -1,7 +1,3 @@
-.landing-section {
-  width: 100%;
-  padding: 30px 15px 15px;
-}
 
 .landing-section-top {
   width: 100%;
@@ -116,28 +112,18 @@ button img {
 }
 
 @media screen and (min-width: 800px) {
-.landing-section {
-  width: 720px;
-  margin: 0 auto;
-}
 .landing-lateral-image {
   width: 142px;
 }
 }
 
 @media screen and (min-width: 990px) {
-.landing-section {
-  width: 940px;
-}
 .landing-lateral-image {
   width: 186px;
 }
 }
 
 @media screen and (min-width: 1200px) {
-.landing-section {
-  width: 1140px;
-}
 .landing-lateral-image {
   width: 226px;
 }

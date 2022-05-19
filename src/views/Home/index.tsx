@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAlcoholicsDrink } from "./actions";
 import { AppDispatch, RootState } from "../../store";
-import { CocktailSection, SearchField } from "../../components";
+import { AlphabeticFilter, CocktailSection, SearchField } from "../../components";
 import { TitleSize } from "../../interfaces";
 import images from "../../assets/images";
 import "./style.css";
@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="landing-section">
+      <section className="outer-wrapper">
         <div className="landing-section-top">
           <article className="landing-lateral-image">
             <img src={images.cocktailLeft} alt="cocktail_left" />
@@ -57,7 +57,7 @@ const Home = () => {
         </div>
         <div className="landing-section-bottom">
           <SearchField placeholder="Search for a Cocktail..." includeButton />
-          <p className="span-totals">
+          <div className="span-totals">
             {homeTotals.map((total) => (
               <span key={total.id}>
                 <div className="span-image">
@@ -66,7 +66,7 @@ const Home = () => {
                 <strong>{total.intro}</strong>: {total.amount}
               </span>
             ))}
-          </p>
+          </div>
         </div>
       </section>
       <CocktailSection
@@ -75,6 +75,7 @@ const Home = () => {
         cocktails={cocktailsState}
         size={95}
       />
+      <AlphabeticFilter filterTitle="By Name" />
     </>
   );
 };
