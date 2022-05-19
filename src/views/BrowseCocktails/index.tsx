@@ -22,7 +22,7 @@ const BrowseCocktails = () => {
 
   return (
     <>
-      {(!drinkLetter && !drinkTerm) || !searchCocktails.drinks ? (
+      {(!drinkLetter && !drinkTerm) || !searchCocktails.drinks.length ? (
         <div>
           <h1 style={{ marginBottom: "75px" }}>Browse Cocktails</h1>
           <p style={{ paddingBlockEnd: "30vh" }}>No drinks found</p>

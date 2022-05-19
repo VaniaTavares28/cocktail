@@ -44,7 +44,9 @@ export const fetchAlcoholicsDrink = async (
     const resp: CocktailResponseType = await axios.get(url);
     if (resp?.status === 200 && resp?.data) {
       const { drinks } = resp.data as { drinks: Cocktail[] };
-      if (!searchLetter && !searchTerm) {
+      if (drinks === null) {
+        dispatch(loadCocktails([]));
+      } else if (!searchLetter && !searchTerm) {
         const eightDrinks = randomEight(drinks);
         dispatch(loadCocktails(eightDrinks));
       } else dispatch(loadCocktails(drinks));
