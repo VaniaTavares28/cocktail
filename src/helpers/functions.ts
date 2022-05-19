@@ -8,3 +8,9 @@ export const alphabetGenerator = () => {
     String.fromCharCode(index + 97)
   );
 };
+
+export const treatItemName = (item: string): string => {
+  const itemArray = item.split(" ");
+  if (itemArray.length === 1) return item;
+  else return itemArray.join("%20");
+};
