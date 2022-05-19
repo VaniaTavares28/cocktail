@@ -32,6 +32,7 @@ const BrowseCocktails = () => {
           custom
           title={{ size: TitleSize.lg, content: "Browse Cocktails" }}
           cocktails={searchCocktails}
+          search
           size={100}
         />
       )}

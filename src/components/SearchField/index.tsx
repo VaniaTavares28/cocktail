@@ -17,12 +17,14 @@ const SearchField = ({
     const target = e.target as typeof e.target & {
       search: { value: string };
     };
-    navigate(`search/drink=${target.search.value}`);
-    target.search.value = "";
+    if (target.search.value.length) {
+      navigate(`search/drink=${target.search.value}`);
+      target.search.value = "";
+    } else return;
   };
 
   return (
-    <form className="custom-form" ref={formRef} onSubmit={handleSubmit}>
+    <form ref={formRef} onSubmit={handleSubmit}>
       <input
         name="search"
         style={{ color: "#000001" }}
@@ -30,7 +32,7 @@ const SearchField = ({
         type="text"
       />
       {includeButton && (
-        <button>
+        <button type="submit">
           <img src={images.search} alt="search_button" />
         </button>
       )}

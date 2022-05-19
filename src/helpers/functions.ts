@@ -3,7 +3,7 @@ export const randomEight = <Type>(array: Type[]): Type[] => {
   return [...array].sort(() => Math.random() - 0.5).splice(randomIndex, 8);
 };
 
-export const alphabetGenerator = (): string[] => {
+export const alphabetGenerator = () => {
   return [...Array(26)].map((_elt, index: number) =>
     String.fromCharCode(index + 97)
   );

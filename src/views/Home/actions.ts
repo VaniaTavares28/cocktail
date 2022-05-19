@@ -16,15 +16,15 @@ type CocktailResponseType = ApiResponseType & {
   [key: string]: { drinks: Cocktail[] };
 };
 
-export const loadingCocktails = (): ActionType => {
+const loadingCocktails = (): ActionType => {
   return { type: CocktailFetchState.loading };
 };
 
-export const failedCocktails = (payload: string): ActionType => {
+const failedCocktails = (payload: string): ActionType => {
   return { type: CocktailFetchState.failed, payload };
 };
 
-export const loadCocktails = (payload: Cocktail[]): ActionType => {
+const loadCocktails = (payload: Cocktail[]): ActionType => {
   return { type: CocktailFetchState.loaded, payload };
 };
 

@@ -7,8 +7,10 @@ const CocktailSection = ({
   cocktails,
   custom,
   size,
+  search,
 }: {
   custom?: boolean;
+  search: boolean;
   title: { size: TitleSize; content: string };
   cocktails: Cocktails;
   size: number;

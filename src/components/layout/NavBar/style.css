@@ -7,7 +7,7 @@ header {
 
 nav {
   width: 100%;
-  padding: 15px 15px 0;
+  padding: 20px 15px 0;
   min-height: 59px;
   margin: 0 auto;
   overflow-y: auto;
@@ -128,7 +128,7 @@ li input {
     width: 294px;
     padding: 0;
   }
-  .small-screen, .colored {
+  .small-screen, .colored, .dropdown-menu {
     display: none;
   }
 
