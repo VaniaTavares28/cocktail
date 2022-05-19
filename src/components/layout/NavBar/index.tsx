@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CSS from "csstype";
 import images from "../../../assets/images";
 import { navLinks } from "../../../helpers/constants";
@@ -13,13 +13,12 @@ const activeStyle: CSS.Properties = {
 };
 
 const Navigation = () => {
-  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
 
   return (
     <header>
       <nav>
-        <div className="logo-container" onClick={() => navigate("/")}>
+        <div className="logo-container">
           <button
             className={showMenu ? "small-screen colored" : "small-screen"}
             onClick={() => setShowMenu(!showMenu)}
@@ -28,7 +27,9 @@ const Navigation = () => {
             <span className="small-screen-bar"></span>
             <span className="small-screen-bar"></span>
           </button>
-          <img src={images.logo} alt="logo" />
+          <Link to="/">
+            <img src={images.logo} alt="logo" />
+          </Link>
         </div>
         <ul className="big-screen">
           {navLinks.map((link) => (
