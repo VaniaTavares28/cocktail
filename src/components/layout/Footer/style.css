@@ -8,7 +8,7 @@
 }
 
 footer article {
-  width: 40%;
+  width: 50%;
 }
 
 footer ul {
@@ -16,7 +16,7 @@ footer ul {
 }
 
 footer article p {
-  text-align: start;
+  text-align: center;
 }
 
 .footer-image-links {
@@ -59,11 +59,14 @@ footer article div, .footer-links {
 }
 
 @media screen and (min-width: 800px) {
-  footer {
+ .footer-section  {
     flex-direction: row;
   }
   footer article, footer ul {
   width: 25%;
+}
+footer article p {
+  text-align: start;
 }
 .footer-image-links {
   width: 45%;
