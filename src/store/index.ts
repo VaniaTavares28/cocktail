@@ -5,7 +5,7 @@ import {
 } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import cocktailReducer from "../features/cocktails/cocktailsSlice";
+import cocktailReducer from "../views/Home/reducer";
 
 const RootReducer = combineReducers({
   cocktails: cocktailReducer,
