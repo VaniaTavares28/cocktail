@@ -6,7 +6,6 @@ export interface Cocktail {
 
 export interface Cocktails {
   drinks: Cocktail[];
-  search?: Cocktail[];
   error: { hasHappened: boolean; message: string };
   loading: boolean;
 }

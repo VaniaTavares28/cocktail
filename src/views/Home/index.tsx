@@ -1,21 +1,18 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearSearchCocktails, fetchAlcoholicsDrink } from "./actions";
+import { fetchAlcoholicsDrink } from "./actions";
 import { AppDispatch, RootState } from "../../store";
-import { CocktailSection } from "../../components";
+import { CocktailSection, SearchField } from "../../components";
 import { TitleSize } from "../../interfaces";
 import images from "../../assets/images";
-import { homeTotals } from "../../helpers/constants";
 import "./style.css";
 
 const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
   const cocktailsState = useSelector((state: RootState) => state.cocktails);
   useEffect(() => {
-    if (cocktailsState.drinks.length) {
-      dispatch(clearSearchCocktails());
-    } else fetchAlcoholicsDrink(dispatch, {});
-  }, [dispatch, cocktailsState.drinks]);
+    fetchAlcoholicsDrink(dispatch, {});
+  }, [dispatch]);
 
   return (
     <>
@@ -57,7 +54,9 @@ const Home = () => {
             <img src={images.cocktailRight} alt="cocktail_right" />
           </div>
         </div>
-        <div className="landing-section-bottom">working</div>
+        <div className="landing-section-bottom">
+          <SearchField placeholder="Search for a Cocktail..." includeButton />
+        </div>
       </section>
       <CocktailSection
         search={false}

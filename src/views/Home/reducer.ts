@@ -5,7 +5,6 @@ const initialCocktails: Cocktails = {
   loading: false,
   error: { hasHappened: false, message: "" },
   drinks: [],
-  search: undefined,
 };
 
 const cocktailReducer = (
@@ -20,17 +19,6 @@ const cocktailReducer = (
         ...state,
         loading: false,
         drinks: action.payload as Cocktail[],
-      };
-    case CocktailFetchState.search:
-      return {
-        ...state,
-        loading: false,
-        search: action.payload as Cocktail[],
-      };
-    case CocktailFetchState.clearSearch:
-      return {
-        ...state,
-        search: undefined,
       };
     case CocktailFetchState.failed:
       return {

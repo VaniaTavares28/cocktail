@@ -10,8 +10,6 @@ export enum CocktailFetchState {
   loading = "cocktails/loading",
   loaded = "cocktails/loaded",
   failed = "cocktails/error",
-  search = "cocktails/search",
-  clearSearch = "cocktails/clearSearch",
 }
 
 type CocktailResponseType = ApiResponseType & {
@@ -28,14 +26,6 @@ const failedCocktails = (payload: string): ActionType => {
 
 const loadCocktails = (payload: Cocktail[]): ActionType => {
   return { type: CocktailFetchState.loaded, payload };
-};
-
-const searchCocktails = (payload: Cocktail[]): ActionType => {
-  return { type: CocktailFetchState.search, payload };
-};
-
-export const clearSearchCocktails = (): ActionType => {
-  return { type: CocktailFetchState.clearSearch };
 };
 
 export const fetchAlcoholicsDrink = async (
@@ -57,7 +47,7 @@ export const fetchAlcoholicsDrink = async (
       if (!searchLetter && !searchTerm) {
         const eightDrinks = randomEight(drinks);
         dispatch(loadCocktails(eightDrinks));
-      } else dispatch(searchCocktails(drinks));
+      } else dispatch(loadCocktails(drinks));
     }
   } catch (error: unknown | { message: string }) {
     dispatch(failedCocktails((error as { message: string }).message));
