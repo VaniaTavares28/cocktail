@@ -6,13 +6,9 @@ export interface Cocktail {
 
 export interface Cocktails {
   drinks: Cocktail[];
+  search?: Cocktail[];
   error: { hasHappened: boolean; message: string };
   loading: boolean;
-}
-
-export interface Search extends Cocktails {
-  searchTerm?: string;
-  searchLetter?: string;
 }
 
 export interface ApiResponseType {
