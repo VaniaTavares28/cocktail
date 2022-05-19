@@ -18,10 +18,10 @@ const Home = () => {
     <>
       <section className="landing-section">
         <div className="landing-section-top">
-          <div className="landing-lateral-image">
+          <article className="landing-lateral-image">
             <img src={images.cocktailLeft} alt="cocktail_left" />
-          </div>
-          <div className="landing-content">
+          </article>
+          <article className="landing-content">
             <h1>Welcome to TheCocktailDB</h1>
             <p>
               An open, crowd-sourced database of drinks and cocktails from
@@ -49,14 +49,15 @@ const Home = () => {
               <br />
               Click to Support: Currently 750 supporters
             </a>
-          </div>
-          <div className="landing-lateral-image">
+          </article>
+          <article className="landing-lateral-image">
             <img src={images.cocktailRight} alt="cocktail_right" />
-          </div>
+          </article>
         </div>
         <div className="landing-section-bottom">
           <SearchField placeholder="Search for a Cocktail..." includeButton />
         </div>
+        <div className="landing-bottom"></div>
       </section>
       <CocktailSection
         search={false}

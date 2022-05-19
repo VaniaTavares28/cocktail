@@ -20,9 +20,7 @@ const SearchField = ({
     if (target.search.value.length) {
       navigate(`search/drink=${target.search.value}`);
       target.search.value = "";
-    } else {
-      return;
-    }
+    } else return;
   };
 
   return (
