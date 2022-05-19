@@ -128,7 +128,7 @@ li input {
     width: 294px;
     padding: 0;
   }
-  .small-screen, .colored {
+  .small-screen, .colored, .dropdown-menu {
     display: none;
   }
 
