@@ -1,7 +1,6 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { BrowseCocktails, Home } from "../views";
-import { Navigation } from "../components";
+import { Footer, Navigation } from "../components";
 
 const Router = () => {
   return (
@@ -14,6 +13,7 @@ const Router = () => {
           <Route path="letter=:drinkLetter" element={<BrowseCocktails />} />
         </Route>
       </Routes>
+      <Footer />
     </>
   );
 };

@@ -3,6 +3,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #230312;
 }
 
 code {
@@ -41,7 +42,4 @@ p {
 
 ul {
   list-style: none;
-}
-#root {
-  background-color: #230312;
 }
