@@ -1,6 +1,6 @@
 import images from "../assets/images";
 
-type Nav = {
+interface Nav {
   id: string;
   title?: string;
   path: string;
