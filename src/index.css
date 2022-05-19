@@ -17,31 +17,6 @@ code {
   color: white;
 }
 
-h1{
-  font: 600 normal 36px/40px 'Open Sans', sans-serif
-}
-
-h2{
-  font: 600 normal 28px/30px 'Open Sans', sans-serif
-}
-
-h3 {
-  font: 400 normal 16px/24px 'Open Sans', sans-serif
-}
-
-h1, h2, h3 {
-  padding: 20px 0 10px;
-  text-align: center;
-}
-
-p {
-  font: 400 normal 14px/22px 'Open Sans', sans-serif;
-  text-align: center;
-}
-
-ul {
-  list-style: none;
-}
 #root {
   background-color: #230312;
 }
