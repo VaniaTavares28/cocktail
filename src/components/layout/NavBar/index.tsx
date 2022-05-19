@@ -30,7 +30,7 @@ const Navigation = () => {
           </button>
           <img src={images.logo} alt="logo" />
         </div>
-        <ul className="big-screen">
+        <ul className="nav-list big-screen">
           {navLinks.map((link) => (
             <li key={link.id} className={link.group ? "social-media-li" : ""}>
               {link.group ? (
@@ -66,7 +66,13 @@ const Navigation = () => {
             <SearchField placeholder="Search" />
           </li>
         </ul>
-        <ul className={showMenu ? "dropdown-menu" : "dropdown-menu-hidden"}>
+        <ul
+          className={
+            showMenu
+              ? "nav-list  dropdown-menu"
+              : "nav-list  dropdown-menu-hidden"
+          }
+        >
           {navLinks.map((link) => (
             <li key={link.id} className={link.group ? "social-media-li" : ""}>
               {link.group ? (

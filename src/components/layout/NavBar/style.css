@@ -80,16 +80,16 @@ nav {
   animation-fill-mode: forwards;
 }
 
-ul li {
+.nav-list li {
   margin-inline-start: 35px;
 }
 
-li a, li a:hover, li a:focus {
+.nav-list li a, .nav-list li a:hover, .nav-list li a:focus {
   padding: 5px 12px;
   color: white;
 }
 
-li a:hover, li a:focus {
+.nav-list li a:hover, .nav-list li a:focus {
   background-color: #c52d2f;
   border-radius: 3px;
 }
