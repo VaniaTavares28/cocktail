@@ -6,6 +6,7 @@ import { CocktailSection, SearchField } from "../../components";
 import { TitleSize } from "../../interfaces";
 import images from "../../assets/images";
 import "./style.css";
+import { homeTotals } from "../../helpers/constants";
 
 const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -56,8 +57,17 @@ const Home = () => {
         </div>
         <div className="landing-section-bottom">
           <SearchField placeholder="Search for a Cocktail..." includeButton />
+          <p className="span-totals">
+            {homeTotals.map((total) => (
+              <span key={total.id}>
+                <div className="span-image">
+                  <img src={total.src} alt={total.intro} />
+                </div>
+                <strong>{total.intro}</strong>: {total.amount}
+              </span>
+            ))}
+          </p>
         </div>
-        <div className="landing-bottom"></div>
       </section>
       <CocktailSection
         search={false}

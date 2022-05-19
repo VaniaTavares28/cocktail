@@ -14,7 +14,7 @@
   width: 100%;
   border-top: 1.5px solid white;
   border-bottom: 1.5px solid white;
-  padding: 5px 0 10px;
+  padding: 5px 0 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,13 +46,21 @@
   height: 54px;
   padding: 8px 15px;
 }
- .span-totals {
+ .span-totals, .span-totals span {
    display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+ }
+
+.span-totals span {
+   padding-inline-end: 10px;
  }
  
 .span-image {
   width: 16px;
   height: 16px;
+  margin-inline-end: 3px;
 }
 
 .landing-lateral-image img, .span-image img {
@@ -84,7 +92,7 @@ border-bottom-left-radius: 10px;
   background-color: white;
   margin-inline-start: -1px;
   position: relative;
-  top: 2.5px;
+  top: 2.3px;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-topright: 10px;

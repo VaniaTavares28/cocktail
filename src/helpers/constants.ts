@@ -31,3 +31,24 @@ export const navLinks: Nav[] = [
     ],
   },
 ];
+
+export const homeTotals = [
+  {
+    id: "totals001",
+    amount: "635",
+    intro: "Total Drinks",
+    src: images.flamingCocktail,
+  },
+  {
+    id: "totals002",
+    amount: "488",
+    intro: "Total Ingredients",
+    src: images.lime,
+  },
+  {
+    id: "totals003",
+    amount: "635(90cc)",
+    intro: "Drink Images",
+    src: images.list,
+  },
+];
