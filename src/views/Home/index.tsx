@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="outer-wrapper" style={{ display: "flex" }}>
+      <section className="outer-wrapper">
         <div className="landing-section-top">
           <article className="landing-lateral-image">
             <img src={images.cocktailLeft} alt="cocktail_left" />
@@ -57,7 +57,7 @@ const Home = () => {
         </div>
         <div className="landing-section-bottom">
           <SearchField placeholder="Search for a Cocktail..." includeButton />
-          <p className="span-totals">
+          <div className="span-totals">
             {homeTotals.map((total) => (
               <span key={total.id}>
                 <div className="span-image">
@@ -66,7 +66,7 @@ const Home = () => {
                 <strong>{total.intro}</strong>: {total.amount}
               </span>
             ))}
-          </p>
+          </div>
         </div>
       </section>
       <CocktailSection
