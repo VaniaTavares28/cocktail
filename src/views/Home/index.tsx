@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAlcoholicsDrink } from "./actions";
 import { AppDispatch, RootState } from "../../store";
-import { CocktailSection } from "../../components";
+import { AlphabeticFilter, CocktailSection } from "../../components";
 import { TitleSize } from "../../interfaces";
 import images from "../../assets/images";
 import "./style.css";
@@ -50,6 +50,7 @@ const Home = () => {
         cocktails={cocktailsState}
         size={95}
       />
+      <AlphabeticFilter filterTitle="By Name" />
     </>
   );
 };
