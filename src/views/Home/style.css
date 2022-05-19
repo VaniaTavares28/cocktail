@@ -89,6 +89,7 @@ border-bottom-left-radius: 10px;
 }
 
 .landing-section-bottom button {
+  cursor: pointer;
   background-color: white;
   margin-inline-start: -1px;
   position: relative;
