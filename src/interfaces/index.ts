@@ -19,6 +19,17 @@ export interface ActionType {
   payload?: string | Cocktail[];
 }
 
+export interface IngredientResponse {
+  idIngredient: string;
+  strIngredient: string;
+  strDescription: string;
+  strType: string;
+  strAlcohol: string;
+  strABV: string;
+  strIngredientThumb?: string;
+  ingredientDrinks?: Cocktail[];
+}
+
 export enum TitleSize {
   sm = "small",
   md = "medium",

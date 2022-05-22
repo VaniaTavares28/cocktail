@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { BrowseCocktails, Home } from "../views";
+import { BrowseCocktails, Home, IngredientSearch } from "../views";
 import { Navigation } from "../components";
 
 const Router = () => {
@@ -13,6 +13,7 @@ const Router = () => {
           <Route path="drink=:drinkTerm" element={<BrowseCocktails />} />
           <Route path="letter=:drinkLetter" element={<BrowseCocktails />} />
         </Route>
+        <Route path="/ingredient/iid=:ingId" element={<IngredientSearch />} />
       </Routes>
     </>
   );

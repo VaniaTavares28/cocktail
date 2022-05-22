@@ -1,13 +1,20 @@
 import { BrowserRouter } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import MainRouter from "./router/MainRouter";
 import "./App.css";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <MainRouter />
-    </BrowserRouter>
-  );
-}
+ const queryClient = new QueryClient();
+
+ const App = () => {
+   return (
+     <BrowserRouter>
+       <QueryClientProvider client={queryClient}>
+         <MainRouter />
+         <ReactQueryDevtools initialIsOpen={false} />
+       </QueryClientProvider>
+     </BrowserRouter>
+   );
+ };
 
 export default App;
