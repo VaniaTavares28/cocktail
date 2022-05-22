@@ -38,7 +38,7 @@ export const getIngredientDrinks = async (
     )}`
   );
   newObj.ingredientDrinks = data?.drinks || [];
-  newObj.strIngredientThumb = `www.thecocktaildb.com/images/ingredients/${treatItemName(
+  newObj.strIngredientThumb = `https://www.thecocktaildb.com/images/ingredients/${treatItemName(
     obj.strIngredient as string
   )}.png`;
   return newObj;
