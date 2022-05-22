@@ -1,0 +1,30 @@
+.ingredient-images {
+  display: flex;
+}
+
+.cocktail-ingredients-grid {
+  display: grid;
+grid-template-columns: repeat(auto-fill, 10vw);
+gap: 0;
+}
+
+
+
+@media screen and (min-width: 800px) {
+  .cocktail-ingredients-grid {
+    grid-template-columns: repeat(3, 145px);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .cocktail-ingredients-grid {
+    grid-template-columns: repeat(3, 195px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cocktail-ingredients-grid {
+    grid-template-columns: repeat(3, 200px);
+    column-gap: 40px;
+  }
+}
