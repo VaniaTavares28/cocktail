@@ -1,3 +1,5 @@
+import arrowLeft from "./Arrow-Left.png";
+import arrowRight from "./Arrow-Right.png";
 import cocktailLeft from "./cocktail_left.png";
 import cocktailRight from "./cocktail_right.png";
 import facebook from "./facebook.png";
@@ -11,6 +13,8 @@ import patreonLogo from "./patreon_logo.png";
 import twitter from "./twitter.png";
 
 const images: Record<string, string> = {
+  arrowLeft,
+  arrowRight,
   cocktailLeft,
   cocktailRight,
   facebook,
