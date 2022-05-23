@@ -78,11 +78,15 @@ const IngredientPage = () => {
         </article>
         <article className="ingredient-right">
           <h2>Drinks</h2>
-          <div className="cocktail-ingredients-grid">
-            {data?.ingredientDrinks?.map((drink) => (
-              <CocktailCard key={drink.idDrink} size={100} drink={drink} />
-            ))}
-          </div>
+          {data?.ingredientDrinks?.length ? (
+            <div className="cocktail-ingredients-grid">
+              {data?.ingredientDrinks?.map((drink) => (
+                <CocktailCard key={drink.idDrink} size={100} drink={drink} />
+              ))}
+            </div>
+          ) : (
+            <p>No drinks found</p>
+          )}
         </article>
       </div>
       <div className="ingredient-text">
