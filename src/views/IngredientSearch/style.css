@@ -3,8 +3,16 @@
   width: 100%;
 }
 
-.ingredient-images:first-child {
+.ingredient-left {
   width: 35%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ingredient-right {
+  width: 65%;
 }
 
 .ingredient-images article h2 {
@@ -20,7 +28,7 @@
 .ingredient-btn, .wide-ingredient-btn {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 22px auto 0;
 }
 
 .wide-ingredient-btn {
@@ -28,7 +36,7 @@
 }
 
 .ingredient-btn {
-  width: 80%;
+  width: 70%;
 }
 
 .ingredient-btn div, .wide-ingredient-btn div {
@@ -43,11 +51,12 @@
 }
 
 .cocktail-ingredients-grid {
-  width: max-content;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 10vw);
+  grid-template-columns: repeat(auto-fill, 75px);
   gap: 0;
   padding: 1px;
+  justify-content: center;
 }
 
 .ingredient-image-container {
@@ -68,6 +77,12 @@
 
 .ingredient-text h2 {
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 400px) {
+  .cocktail-ingredients-grid {
+    grid-template-columns: repeat(auto-fill, 20vw);
+  }
 }
 
 @media screen and (min-width: 800px) {

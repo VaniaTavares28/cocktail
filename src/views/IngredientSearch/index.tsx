@@ -69,14 +69,14 @@ const IngredientPage = () => {
   return (
     <section className="outer-wrapper">
       <div className="ingredient-images">
-        <article>
+        <article className="ingredient-left">
           <h2>{data?.strIngredient}</h2>
           <div className="ingredient-image-container">
             <img src={data?.strIngredientThumb} alt={data?.strIngredient} />
           </div>
           <ChangeIngredient custom ingId={ingId as string} />
         </article>
-        <article>
+        <article className="ingredient-right">
           <h2>Drinks</h2>
           <div className="cocktail-ingredients-grid">
             {data?.ingredientDrinks?.map((drink) => (
