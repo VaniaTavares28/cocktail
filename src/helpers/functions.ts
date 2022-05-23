@@ -27,9 +27,9 @@ export const fetchIngredient = async (
     );
     if (status === 200 && data?.ingredients) {
       return data?.ingredients[0];
-    } else throw Error("No ingredient found");
+    } else throw new Error("No ingredient found");
   } catch (error) {
-    throw Error((error as Record<string, string>)?.message);
+    throw new Error((error as Record<string, string>)?.message);
   }
 };
 
