@@ -20,12 +20,17 @@ const treatItemName = (item: string): string => {
 
 export const fetchIngredient = async (
   ingredientId: string | number
-): Promise<IngredientResponse> => {
-  const { data } = await axios.get(
-    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=${ingredientId}`
-  );
-
-  return data?.ingredients[0];
+): Promise<IngredientResponse | void> => {
+  try {
+    const { status, data } = await axios.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=${ingredientId}`
+    );
+    if (status === 200 && data?.ingredients) {
+      return data?.ingredients[0];
+    } else throw Error("No ingredient found");
+  } catch (error) {
+    throw Error((error as Record<string, string>)?.message);
+  }
 };
 
 export const getIngredientDrinks = async (
