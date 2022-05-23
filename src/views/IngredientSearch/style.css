@@ -1,18 +1,81 @@
 .ingredient-images {
   display: flex;
+  width: 100%;
+}
+
+.ingredient-images:first-child {
+  width: 35%;
+}
+
+.ingredient-images article h2 {
+  padding-top: 0;
+  margin-bottom: 34px;
+}
+
+.ingredient-images article h2 {
+  padding-top: 0;
+  margin-bottom: 34px;
+}
+
+.ingredient-btn, .wide-ingredient-btn {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.wide-ingredient-btn {
+  width: 30%;
+}
+
+.ingredient-btn {
+  width: 80%;
+}
+
+.ingredient-btn div, .wide-ingredient-btn div {
+ width: 50%;
+ height: auto;
+}
+
+.ingredient-btn a img, .wide-ingredient-btn a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .cocktail-ingredients-grid {
+  width: max-content;
   display: grid;
-grid-template-columns: repeat(auto-fill, 10vw);
-gap: 0;
+  grid-template-columns: repeat(auto-fill, 10vw);
+  gap: 0;
+  padding: 1px;
 }
 
+.ingredient-image-container {
+    width: 15vw;
+    height: auto;
+  }
 
+  .ingredient-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.ingredient-text {
+  width: 100%;
+  padding-top: 26px;
+}
+
+.ingredient-text h2 {
+  margin-bottom: 10px;
+}
 
 @media screen and (min-width: 800px) {
   .cocktail-ingredients-grid {
-    grid-template-columns: repeat(3, 145px);
+    grid-template-columns: repeat(3, 150px);
+  }
+  .ingredient-image-container {
+    width: 263px;
   }
 }
 
@@ -20,11 +83,18 @@ gap: 0;
   .cocktail-ingredients-grid {
     grid-template-columns: repeat(3, 195px);
   }
+
+  .ingredient-image-container {
+    width: 345px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .cocktail-ingredients-grid {
     grid-template-columns: repeat(3, 200px);
     column-gap: 40px;
+  }
+  .ingredient-image-container {
+    width: 418px;
   }
 }
